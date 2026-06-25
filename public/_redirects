@@ -1,0 +1,3 @@
+/voiceassistant https://voiceassistant.simplyadmin.org/ 301
+/voiceassistant/* https://voiceassistant.simplyadmin.org/:splat 301
+/* /index.html 200
