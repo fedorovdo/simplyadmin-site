@@ -1,6 +1,10 @@
 .site-header,
 .hero,
 .section,
+.footer {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
 
 .redirect-page {
   min-height: 100vh;
@@ -19,10 +23,6 @@
 .redirect-card h1 {
   margin-bottom: 0;
   font-size: clamp(42px, 10vw, 72px);
-}
-.footer {
-  width: min(1180px, calc(100% - 48px));
-  margin: 0 auto;
 }
 
 .site-header {
