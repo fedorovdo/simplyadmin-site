@@ -12,6 +12,9 @@ type ProjectSummary = {
 const githubUrl = 'https://github.com/fedorovdo'
 const printLedgerSiteUrl = 'https://printledger.simplyadmin.org'
 const printLedgerGitHubUrl = 'https://github.com/fedorovdo/printledger'
+const ipLocalScanSiteUrl = 'https://iplocalscan.simplyadmin.org/'
+const ipLocalScanGitHubUrl = 'https://github.com/fedorovdo/iplocalscan'
+const ipLocalScanDownloadUrl = 'https://github.com/fedorovdo/iplocalscan/releases/latest'
 const voiceAssistantSiteUrl = 'https://voiceassistant.simplyadmin.org/'
 const voiceAssistantGitHubUrl = 'https://github.com/fedorovdo/VoiceAssistant'
 const voiceAssistantDownloadUrl = 'https://github.com/fedorovdo/VoiceAssistant/releases/download/v0.2.0/VoiceAssistant-0.2.0-x64.exe'
@@ -58,6 +61,12 @@ const copy = {
           'Self-hosted система учета принтеров, картриджей, расходников, ремонтов и резервных копий для IT-команд.',
       },
       {
+        name: 'IPLocalScan',
+        status: 'v0.4.0 · Windows',
+        description:
+          'Локальное Windows-приложение для инвентаризации сети: устройства, порты, сервисы, производители, сетевые принтеры, SNMP, история изменений и экспорт CSV.',
+      },
+      {
         name: 'VoiceAssistant',
         status: 'Preview',
         description:
@@ -68,11 +77,6 @@ const copy = {
         status: 'In development',
         description:
           'Локальный корпоративный чат с группами, файлами, ботами и будущей поддержкой AI.',
-      },
-      {
-        name: 'Coming soon',
-        status: 'Future tools',
-        description: 'Место для следующих небольших инструментов Simply Admin. Без выдуманных продуктов.',
       },
     ],
     footerText: 'Open-source tools and practical infrastructure notes.',
@@ -110,6 +114,12 @@ const copy = {
           'A self-hosted printer, cartridge, consumable, repair, and backup inventory system for IT teams.',
       },
       {
+        name: 'IPLocalScan',
+        status: 'v0.4.0 · Windows',
+        description:
+          'A local Windows network inventory application for devices, ports, services, vendors, network printers, SNMP, scan history, and CSV export.',
+      },
+      {
         name: 'VoiceAssistant',
         status: 'Preview',
         description: 'A local helper for technical conversations, learning, and quick practical hints.',
@@ -118,11 +128,6 @@ const copy = {
         name: 'OfficeChat',
         status: 'In development',
         description: 'A local team chat with groups, files, bots, and future AI support.',
-      },
-      {
-        name: 'Coming soon',
-        status: 'Future tools',
-        description: 'Reserved for the next small Simply Admin tools. No fake products here.',
       },
     ],
     footerText: 'Open-source tools and practical infrastructure notes.',
@@ -206,8 +211,9 @@ function App() {
           </div>
         </div>
         <div className="showcase-panel" aria-hidden="true">
-          <div className="showcase-item active">VoiceAssistant</div>
+          <div className="showcase-item active">IPLocalScan</div>
           <div className="showcase-item">PrintLedger</div>
+          <div className="showcase-item">VoiceAssistant</div>
           <div className="showcase-item muted">OfficeChat</div>
           <div className="showcase-line" />
         </div>
@@ -241,6 +247,7 @@ function App() {
         </div>
         <nav aria-label="Footer navigation">
           <a href={githubUrl}>GitHub</a>
+          <a href={ipLocalScanSiteUrl}>IPLocalScan</a>
           <a href={voiceAssistantSiteUrl}>VoiceAssistant</a>
           <a href={printLedgerSiteUrl}>PrintLedger</a>
         </nav>
@@ -284,7 +291,20 @@ function ProjectCard({ project, language }: { project: ProjectSummary; language:
             </a>
           </>
         )}
-        {(project.name === 'OfficeChat' || project.name === 'Coming soon') && (
+        {project.name === 'IPLocalScan' && (
+          <>
+            <a className="button primary small" href={ipLocalScanSiteUrl}>
+              {t.openSite}
+            </a>
+            <a className="button secondary small" href={ipLocalScanDownloadUrl}>
+              {t.download}
+            </a>
+            <a className="button secondary small" href={ipLocalScanGitHubUrl}>
+              GitHub
+            </a>
+          </>
+        )}
+        {project.name === 'OfficeChat' && (
           <span className="button disabled small" aria-disabled="true">
             {t.soon}
           </span>
