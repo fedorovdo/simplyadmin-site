@@ -1,3 +1,5 @@
-/voiceassistant https://voiceassistant.simplyadmin.org/ 301
-/voiceassistant/* https://voiceassistant.simplyadmin.org/:splat 301
+/apps /index.html 200
+/apps/* /index.html 200
+/voiceassistant /index.html 200
+/voiceassistant/* /index.html 200
 /* /index.html 200
