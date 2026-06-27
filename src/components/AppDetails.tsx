@@ -28,7 +28,9 @@ export function AppDetails({ application, language, instance, onClose }: AppDeta
           <p className="app-category">{application.category[language]}</p>
           <h2 id={titleId}>{application.name}</h2>
           <div className="detail-meta">
-            <span>{t.statuses[application.status]}</span>
+            <span className={`status status-${application.status.toLowerCase().replaceAll(' ', '-')}`}>
+              {t.statuses[application.status]}
+            </span>
             {application.version && <span>{application.version}</span>}
             <span>{application.platform[language]}</span>
           </div>

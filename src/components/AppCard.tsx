@@ -9,6 +9,13 @@ type AppCardProps = {
   onOpen: () => void
 }
 
+const appMonograms: Record<string, string> = {
+  printledger: 'PL',
+  iplocalscan: 'IP',
+  voiceassistant: 'VA',
+  officechat: 'OC',
+}
+
 export function AppCard({ application, language, selected, onOpen }: AppCardProps) {
   const t = siteCopy[language]
 
@@ -34,13 +41,18 @@ export function AppCard({ application, language, selected, onOpen }: AppCardProp
         aria-current={selected ? 'page' : undefined}
       >
         <div className="card-topline">
+          <span className="app-monogram" aria-hidden="true">
+            {appMonograms[application.id] ?? application.name.slice(0, 2).toUpperCase()}
+          </span>
           <span className={`status status-${application.status.toLowerCase().replaceAll(' ', '-')}`}>
             {t.statuses[application.status]}
           </span>
+        </div>
+        <div className="card-metadata">
+          <p className="app-category">{application.category[language]}</p>
           <span className="platform">{application.platform[language]}</span>
         </div>
-        <div>
-          <p className="app-category">{application.category[language]}</p>
+        <div className="card-title-row">
           <h2>{application.name}</h2>
           {application.version && <span className="version">{application.version}</span>}
         </div>
@@ -49,6 +61,11 @@ export function AppCard({ application, language, selected, onOpen }: AppCardProp
       <button className="details-button" type="button" onClick={onOpen}>
         {t.catalog.details}<span aria-hidden="true">→</span>
       </button>
+      <div className="card-secondary-actions" aria-label={`${application.name} links`}>
+        <a href={application.links.github}>{t.details.github}</a>
+        {application.links.demo && <a href={application.links.demo}>{t.details.demo}</a>}
+        {application.links.download && <a href={application.links.download}>{t.details.download}</a>}
+      </div>
     </article>
   )
 }

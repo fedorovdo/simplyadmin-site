@@ -29,19 +29,25 @@ export function HomePage({ language, onNavigate }: HomePageProps) {
             <a className="button primary" href="/apps" onClick={openApplications}>{t.home.applicationsCta}</a>
             <a className="button secondary" href={githubUrl}>GitHub</a>
           </div>
+          <ul className="hero-meta">
+            {['LOCAL-FIRST', 'SELF-HOSTED', 'OPEN SOURCE', 'WINDOWS / LINUX / WEB'].map((label) => (
+              <li key={label}>{label}</li>
+            ))}
+          </ul>
         </div>
-        <div className="hero-signal" aria-hidden="true">
-          <div className="signal-node node-main"><span>SA</span></div>
-          <div className="signal-node node-one" />
-          <div className="signal-node node-two" />
-          <div className="signal-node node-three" />
-          <div className="signal-path path-one" />
-          <div className="signal-path path-two" />
-          <div className="signal-path path-three" />
-          <span className="signal-label label-one">local-first</span>
-          <span className="signal-label label-two">open-source</span>
-          <span className="signal-label label-three">self-hosted</span>
-        </div>
+        <aside className="hero-signal" aria-hidden="true">
+          <div className="terminal-titlebar">
+            <span className="terminal-dots"><i /><i /><i /></span>
+            <span className="terminal-host">simplyadmin@local</span>
+          </div>
+          <div className="terminal-body">
+            <div className="terminal-mark">SA</div>
+            <p><span>&gt;</span> practical tools</p>
+            <p><span>&gt;</span> local-first</p>
+            <p><span>&gt;</span> self-hosted</p>
+            <p><span>&gt;</span> open source</p>
+          </div>
+        </aside>
       </section>
 
       <section className="page-section about-layout" id="about">
