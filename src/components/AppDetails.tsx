@@ -13,12 +13,6 @@ export function AppDetails({ application, language, instance, onClose }: AppDeta
   const t = siteCopy[language]
   const titleId = `details-${application.id}-${instance}`
   const monogram = application.name.match(/[A-Z]/g)?.slice(0, 2).join('') ?? application.name.slice(0, 2).toUpperCase()
-  const referenceLink = application.links.documentation
-    ? { href: application.links.documentation, label: t.details.documentation }
-    : application.links.release
-      ? { href: application.links.release, label: t.details.release }
-      : null
-
   return (
     <article className="app-details" aria-labelledby={titleId}>
       <button className="details-back" type="button" onClick={onClose}>
@@ -67,7 +61,8 @@ export function AppDetails({ application, language, instance, onClose }: AppDeta
         {application.links.demo && <a className="button primary" href={application.links.demo} rel="noreferrer">{t.details.demo}</a>}
         {application.links.download && <a className="button primary" href={application.links.download} rel="noreferrer">{t.details.download}</a>}
         <a className="button secondary" href={application.links.github} rel="noreferrer">{t.details.github}</a>
-        {referenceLink && <a className="button secondary" href={referenceLink.href} rel="noreferrer">{referenceLink.label}</a>}
+        {application.links.release && <a className="button secondary" href={application.links.release} rel="noreferrer">{t.details.release}</a>}
+        {application.links.documentation && <a className="button secondary" href={application.links.documentation} rel="noreferrer">{t.details.documentation}</a>}
         {application.links.website && <a className="button secondary" href={application.links.website} rel="noreferrer">{t.details.website}</a>}
       </div>
     </article>

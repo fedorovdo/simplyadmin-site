@@ -35,6 +35,74 @@ export const applications: Application[] = [
     badges: { ru: ['Open source', 'Self-hosted'], en: ['Open source', 'Self-hosted'] },
   },
   {
+    id: 'longpathguard',
+    name: 'LongPathGuard',
+    status: 'Stable',
+    version: 'v0.2.1',
+    platform: {
+      ru: 'Windows Server · Web',
+      en: 'Windows Server · Web',
+    },
+    category: {
+      ru: 'Аудит файлового сервера',
+      en: 'File server audit',
+    },
+    summary: {
+      ru: 'Локальное приложение для поиска и контроля слишком длинных путей и имён файлов на Windows Server.',
+      en: 'A local Windows Server application for detecting and monitoring excessively long file paths and names.',
+    },
+    description: {
+      ru: 'LongPathGuard наблюдает за файловой системой, сохраняет события в SQLite и помогает администраторам находить проблемные пути до того, как они вызовут ошибки копирования, резервного копирования или миграции. Приложение работает только в режиме аудита и не изменяет файлы.',
+      en: 'LongPathGuard monitors filesystem activity, stores events in SQLite, and helps administrators detect problematic paths before they cause copying, backup, or migration failures. The application is audit-only and never modifies files.',
+    },
+    features: {
+      ru: [
+        'Мониторинг создания, переименования и изменения файлов',
+        'Настраиваемые пороги длины пути и имени',
+        'Ручное сканирование существующих каталогов',
+        'История SQLite, фильтры и экспорт CSV',
+        'Telegram и Email уведомления',
+        'Интерфейс на русском и английском языках',
+      ],
+      en: [
+        'Monitoring of created, renamed, and modified files',
+        'Configurable path and filename thresholds',
+        'Manual scanning of existing directories',
+        'SQLite history, filters, and CSV export',
+        'Telegram and Email notifications',
+        'Russian and English interface',
+      ],
+    },
+    limitations: {
+      ru: [
+        'Только аудит: файлы не удаляются, не перемещаются и не переименовываются',
+        'Встроенной авторизации web-интерфейса пока нет',
+        'Для режима Windows-службы требуется NSSM',
+        'Приложение предназначено для Windows Server и совместимых версий Windows',
+      ],
+      en: [
+        'Audit-only: files are never deleted, moved, or renamed',
+        'The web interface does not yet include built-in authentication',
+        'NSSM is required for Windows Service mode',
+        'The application is intended for Windows Server and compatible Windows versions',
+      ],
+    },
+    links: {
+      github: 'https://github.com/fedorovdo/longpathguard',
+      download: 'https://github.com/fedorovdo/longpathguard/releases/latest',
+      release: 'https://github.com/fedorovdo/longpathguard/releases/tag/v0.2.1',
+      documentation: 'https://github.com/fedorovdo/longpathguard#readme',
+    },
+    screenshots: {
+      ru: '/images/apps/screenshots_ru/longpathguard.png',
+      en: '/images/apps/screenshots_en/longpathguard.png',
+    },
+    badges: {
+      ru: ['Open source', 'Audit only', 'Windows Server'],
+      en: ['Open source', 'Audit only', 'Windows Server'],
+    },
+  },
+  {
     id: 'iplocalscan',
     name: 'IPLocalScan',
     status: 'Stable',
