@@ -1951,3 +1951,60 @@ button:focus-visible,
     gap: 8px 16px;
   }
 }
+/* Compact public contact section. */
+.contact-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 48px;
+  border-top: 1px solid var(--color-border);
+  padding-block: 64px;
+}
+.contact-copy {
+  max-width: 680px;
+}
+.contact-copy .eyebrow {
+  margin-bottom: 12px;
+}
+.contact-copy h2 {
+  margin-bottom: 14px;
+  font-size: clamp(34px, 4vw, 44px);
+  line-height: 1.08;
+}
+.contact-text {
+  max-width: 64ch;
+  margin-bottom: 0;
+  color: var(--color-text-secondary);
+  line-height: 1.68;
+}
+.contact-actions {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-email {
+  max-width: 100%;
+  color: var(--color-accent-dark);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+.contact-email:hover,
+.contact-email:focus-visible {
+  text-decoration: underline;
+}
+@media (max-width: 700px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-block: 52px;
+  }
+  .contact-actions {
+    align-items: stretch;
+  }
+  .contact-actions .button {
+    width: 100%;
+  }
+}

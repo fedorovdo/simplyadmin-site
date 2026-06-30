@@ -1,5 +1,5 @@
 import type { MouseEvent } from 'react'
-import { githubUrl, siteCopy } from '../data/copy'
+import { siteCopy, siteMetadata } from '../data/copy'
 import type { Language } from '../types/app'
 
 type FooterProps = {
@@ -22,9 +22,10 @@ export function Footer({ language, onNavigate }: FooterProps) {
         <strong>Simply Admin</strong>
         <p>{t.footer.note}</p>
       </div>
-      <nav aria-label="Footer navigation">
+      <nav aria-label={t.footerAria}>
         <a href="/apps" onClick={openApplications}>{t.footer.applications}</a>
-        <a href={githubUrl}>GitHub</a>
+        <a href={siteMetadata.emailUrl}>{siteMetadata.email}</a>
+        <a href={siteMetadata.github}>GitHub</a>
       </nav>
       <span className="copyright">© {year}</span>
     </footer>

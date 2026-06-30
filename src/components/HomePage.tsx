@@ -1,6 +1,6 @@
 import type { MouseEvent } from 'react'
 import { applications } from '../data/apps'
-import { githubUrl, siteCopy } from '../data/copy'
+import { siteCopy, siteMetadata } from '../data/copy'
 import type { Language } from '../types/app'
 
 type HomePageProps = {
@@ -27,7 +27,7 @@ export function HomePage({ language, onNavigate }: HomePageProps) {
           <p className="hero-description">{t.home.description}</p>
           <div className="button-row">
             <a className="button primary" href="/apps" onClick={openApplications}>{t.home.applicationsCta}</a>
-            <a className="button secondary" href={githubUrl}>GitHub</a>
+            <a className="button secondary" href={siteMetadata.github}>GitHub</a>
           </div>
           <ul className="hero-meta">
             {['LOCAL-FIRST', 'SELF-HOSTED', 'OPEN SOURCE', 'WINDOWS / LINUX / WEB'].map((label) => (
@@ -91,6 +91,17 @@ export function HomePage({ language, onNavigate }: HomePageProps) {
               <small>{siteCopy[language].statuses[application.status]}{application.version ? ` · ${application.version}` : ''}</small>
             </button>
           ))}
+        </div>
+      </section>
+      <section className="page-section contact-section" id="contact" aria-labelledby="contact-title">
+        <div className="contact-copy">
+          <p className="eyebrow">{t.contact.eyebrow}</p>
+          <h2 id="contact-title">{t.contact.title}</h2>
+          <p className="contact-text">{t.contact.text}</p>
+        </div>
+        <div className="contact-actions">
+          <a className="button primary" href={siteMetadata.emailUrl}>{t.contact.emailLabel}</a>
+          <a className="contact-email" href={siteMetadata.emailUrl}>{siteMetadata.email}</a>
         </div>
       </section>
     </>

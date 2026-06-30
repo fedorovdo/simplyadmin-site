@@ -14,6 +14,14 @@ Final public architecture:
 
 The main site keeps only the project catalog. VoiceAssistant is linked as an external product site.
 
+## Public Website, Contact, and Branding
+
+- Website: [https://simplyadmin.org](https://simplyadmin.org)
+- Contact: [itsimplydev@gmail.com](mailto:itsimplydev@gmail.com)
+- GitHub: [https://github.com/fedorovdo](https://github.com/fedorovdo)
+
+Standardized Simply Admin brand assets are stored in `public/brand/`. Use the `*-dark.png` variants on light backgrounds and the `*-light.png` variants on dark backgrounds. Preserve their original proportions and pixel geometry.
+
 ## Routes
 
 - `/` - Simply Admin homepage and project catalog.
