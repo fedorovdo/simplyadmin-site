@@ -1,6 +1,7 @@
 export const siteCopy = {
   ru: {
     nav: { about: 'Обо мне', applications: 'Приложения', github: 'GitHub', aria: 'Основная навигация' },
+    contactNav: '\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b',
     languageAria: 'Выбор языка',
     home: {
       eyebrow: 'Системное администрирование · Open source',
@@ -27,6 +28,12 @@ export const siteCopy = {
       previewText: 'Каждый проект развивается отдельно, а общий каталог показывает текущий статус, возможности и ограничения.',
       previewCta: 'Открыть весь каталог',
     },
+    contact: {
+      eyebrow: '\u0421\u0432\u044f\u0437\u044c',
+      title: '\u0421\u0432\u044f\u0437\u0430\u0442\u044c\u0441\u044f \u0441\u043e \u043c\u043d\u043e\u0439',
+      text: '\u041f\u043e \u0432\u043e\u043f\u0440\u043e\u0441\u0430\u043c \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0439, \u043d\u0430\u0439\u0434\u0435\u043d\u043d\u044b\u043c \u043e\u0448\u0438\u0431\u043a\u0430\u043c, \u0438\u0434\u0435\u044f\u043c \u0438 \u0441\u043e\u0442\u0440\u0443\u0434\u043d\u0438\u0447\u0435\u0441\u0442\u0432\u0443 \u043c\u043e\u0436\u043d\u043e \u043d\u0430\u043f\u0438\u0441\u0430\u0442\u044c \u043f\u043e \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u043f\u043e\u0447\u0442\u0435.',
+      emailLabel: '\u041d\u0430\u043f\u0438\u0441\u0430\u0442\u044c \u043d\u0430 email',
+    },
     catalog: {
       eyebrow: 'Каталог Simply Admin',
       title: 'Приложения',
@@ -50,10 +57,12 @@ export const siteCopy = {
     },
     statuses: { Stable: 'Стабильный', Preview: 'Preview', 'In development': 'В разработке' },
     footer: { note: 'Практические инструменты для системных администраторов и небольших IT-команд.', applications: 'Приложения' },
+    footerAria: '\u041d\u0430\u0432\u0438\u0433\u0430\u0446\u0438\u044f \u0432 \u043f\u043e\u0434\u0432\u0430\u043b\u0435 \u0441\u0430\u0439\u0442\u0430',
   },
   en: {
     nav: { about: 'About', applications: 'Applications', github: 'GitHub', aria: 'Primary navigation' },
     languageAria: 'Language selection',
+    contactNav: 'Contact',
     home: {
       eyebrow: 'System administration · Open source',
       title: 'Simply Admin',
@@ -79,6 +88,12 @@ export const siteCopy = {
       previewText: 'Each project develops independently, while the shared catalog presents its current status, capabilities, and limitations.',
       previewCta: 'Open the full catalog',
     },
+    contact: {
+      eyebrow: 'Contact',
+      title: 'Get in touch',
+      text: 'For questions about the applications, bug reports, ideas, or collaboration, contact me by email.',
+      emailLabel: 'Send an email',
+    },
     catalog: {
       eyebrow: 'Simply Admin catalog',
       title: 'Applications',
@@ -102,7 +117,14 @@ export const siteCopy = {
     },
     statuses: { Stable: 'Stable', Preview: 'Preview', 'In development': 'In development' },
     footer: { note: 'Practical tools for system administrators and small IT teams.', applications: 'Applications' },
+    footerAria: 'Footer navigation',
   },
 } as const
 
-export const githubUrl = 'https://github.com/fedorovdo'
+const contactEmail = 'itsimplydev@gmail.com'
+export const siteMetadata = {
+  email: contactEmail,
+  emailUrl: `mailto:${contactEmail}`,
+  website: 'https://simplyadmin.org',
+  github: 'https://github.com/fedorovdo',
+} as const

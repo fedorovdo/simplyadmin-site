@@ -1,5 +1,5 @@
 import type { MouseEvent } from 'react'
-import { githubUrl, siteCopy } from '../data/copy'
+import { siteCopy, siteMetadata } from '../data/copy'
 import type { Language } from '../types/app'
 
 type HeaderProps = {
@@ -22,8 +22,8 @@ export function Header({ language, page, onLanguageChange, onNavigate }: HeaderP
       <div className="site-header-inner">
         <a className="brand" href="/" onClick={(event) => navigate(event, '/')} aria-label="Simply Admin home">
           <picture>
-            <source media="(max-width: 390px)" srcSet="/brand/simply-admin-mark-mono.png" />
-            <img className="brand-logo" src="/brand/simply-admin-logo-mono.png" alt="Simply Admin" />
+            <source media="(max-width: 390px)" srcSet="/brand/simply-admin-mark-dark.png" />
+            <img className="brand-logo" src="/brand/simply-admin-logo-dark.png" alt="Simply Admin logo" />
           </picture>
         </a>
         <nav className="nav" aria-label={t.nav.aria}>
@@ -33,7 +33,8 @@ export function Header({ language, page, onLanguageChange, onNavigate }: HeaderP
           <a className={page === 'apps' ? 'active' : ''} href="/apps" onClick={(event) => navigate(event, '/apps')} aria-current={page === 'apps' ? 'page' : undefined}>
             {t.nav.applications}
           </a>
-          <a href={githubUrl}>GitHub</a>
+          <a href={page === 'home' ? '#contact' : '/#contact'}>{t.contactNav}</a>
+          <a href={siteMetadata.github}>GitHub</a>
         </nav>
         <div className="language-switcher" role="group" aria-label={t.languageAria}>
           {(['ru', 'en'] as const).map((item) => (
