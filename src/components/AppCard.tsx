@@ -11,6 +11,7 @@ type AppCardProps = {
 
 const appMonograms: Record<string, string> = {
   printledger: 'PL',
+  longpathguard: 'LP',
   iplocalscan: 'IP',
   voiceassistant: 'VA',
   officechat: 'OC',
